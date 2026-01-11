@@ -1,0 +1,19 @@
+// Smooth scroll for navigation links
+const links = document.querySelectorAll('nav ul li a');
+
+for (const link of links) {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').slice(1);
+        const target = document.getElementById(targetId);
+        target.scrollIntoView({ behavior: 'smooth' });
+    });
+}
+
+// Simple contact form submission
+const contactForm = document.getElementById('contactForm');
+contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you! Your message has been sent.');
+    contactForm.reset();
+});
